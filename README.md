@@ -1,5 +1,5 @@
 # fbp2pm
-fbp2pm converts wxFormBuilders save files to a perl module using FBP::Perl (http://search.cpan.org/~adamk/FBP-Perl-0.78/lib/FBP/Perl.pm). xrc2pm distinguishes between dialogs and frames and runs on the command line.
+fbp2pm converts wxFormBuilders [1] save files to a perl module using FBP::Perl [2]. xrc2pm distinguishes between dialogs and frames and runs on the command line.
 
 Usage:
 fbp2pm.pl dialog|frame [name] [filename]
@@ -11,3 +11,7 @@ Example:
 fbp2pm.pl frame main main.fbp
 
 Opens main.fbp, converts the frame called main and stores the resulting perl code in main.pm.
+
+
+[1] http://sourceforge.net/projects/wxformbuilder/
+[2] http://search.cpan.org/~adamk/FBP-Perl-0.78/lib/FBP/Perl.pm
