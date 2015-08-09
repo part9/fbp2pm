@@ -22,3 +22,14 @@ Opens main.fbp, converts the frame called main and stores the resulting perl cod
 
 0. http://sourceforge.net/projects/wxformbuilder/
 0. http://search.cpan.org/~adamk/FBP-Perl-0.78/lib/FBP/Perl.pm
+
+Bugfix:
+-------
+When using a Wx::DatePickerCtrl FBP::Perl will die generating the perl code, stating the use of that control is not supported. To fix this, you have to comment out line 1168 of perl5/lib/perl5/FBP/Perl.pm like so:
+```
+# die "Wx::DatePickerCtrl is not supported by Wx.pm";
+```
+And as the date picker control does not only depend on Wx::DateTime (which is taken care of by FBP::Perl correctly) but on Wx::Calendar as well, the according use statement has to be added to the perl code after generation:
+```
+use Wx::Calendar;
+```
